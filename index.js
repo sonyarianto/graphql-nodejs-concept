@@ -109,10 +109,21 @@ const RootMutationType = new GraphQLObjectType({
         title: { type: GraphQLNonNull(GraphQLString) }
       },
       resolve: (parent, args) => { 
-          const book = { id: dataSongs.length + 1, title: args.title }
-          dataSongs.push(book) 
+          const song = { id: dataSongs.length + 1, title: args.title }
+          dataSongs.push(song) 
         }
-    }
+    },
+    addArtist: {
+      type: ArtistType,
+      description: 'Add new artist',
+      args: {
+        name: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve: (parent, args) => { 
+          const artist = { id: dataArtists.length + 1, name: args.name }
+          dataArtists.push(artist) 
+        }
+    },
   })
 })
 
