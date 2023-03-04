@@ -7,11 +7,12 @@ All logic is on `index.js` file, so it should be simple.
 
 After we understand about GraphQL, I think will be easy later if we want to replace the data layer with real connection to database.
 
-## Libraries used (see on `package.json`)
+## Libraries and tools used (see on `package.json`)
 
 - `express`, as web framework (minimalist) on Node.js
 - `express-graphql`, as GraphQL HTTP server middleware
 - `graphql`, as JS reference implementation for GraphQL
+- `nodemon`, just a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 
 ## Sample data
 
