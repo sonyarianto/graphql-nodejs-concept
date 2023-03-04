@@ -70,7 +70,7 @@ const RootQueryType = new GraphQLObjectType({
     fields: () => ({
       songs: {
         type: new GraphQLList(SongType),
-        description: 'List of all songs',
+        description: 'Songs',
         resolve: () => dataSongs
       },
       song: {
@@ -83,7 +83,7 @@ const RootQueryType = new GraphQLObjectType({
       },
       artists: {
         type: new GraphQLList(ArtistType),
-        description: 'List of all artists',
+        description: 'Artists',
         resolve: () => dataArtists
       },
       artist: {
@@ -103,25 +103,27 @@ const RootMutationType = new GraphQLObjectType({
   fields: () => ({
     addSong: {
       type: SongType,
-      description: 'Add new song',
+      description: 'Add song',
       args: {
         artistId: { type: GraphQLNonNull(GraphQLInt) },
         title: { type: GraphQLNonNull(GraphQLString) }
       },
       resolve: (parent, args) => { 
           const song = { id: dataSongs.length + 1, title: args.title }
-          dataSongs.push(song) 
+          dataSongs.push(song)
+          return song 
         }
     },
     addArtist: {
       type: ArtistType,
-      description: 'Add new artist',
+      description: 'Add artist',
       args: {
         name: { type: GraphQLNonNull(GraphQLString) }
       },
       resolve: (parent, args) => { 
           const artist = { id: dataArtists.length + 1, name: args.name }
-          dataArtists.push(artist) 
+          dataArtists.push(artist)
+          return artist
         }
     },
   })
@@ -137,4 +139,4 @@ app.use('/graphql', expressGraphQL({
   graphiql: true
 }))
 
-app.listen(5000., () => console.log(`Server Running`))
+app.listen(5000., () => console.log(`GraphQL Server Running on port 5000.`))
