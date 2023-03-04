@@ -37,10 +37,10 @@ const ArtistType = new GraphQLObjectType({
   name: 'Artist',
   description: 'Artists',
   fields: () => ({
-    id: { type: GraphQLNonNull(GraphQLInt) },
-    name: { type: GraphQLNonNull(GraphQLString) },
+    id: { type: new GraphQLNonNull(GraphQLInt) },
+    name: { type: new GraphQLNonNull(GraphQLString) },
     songs: { 
-      type: GraphQLList(SongType),
+      type: new GraphQLList(SongType),
       resolve: (parentArtist) => {
         return dataSongs.filter(song => song.artistId === parentArtist.id)
       }
@@ -52,9 +52,9 @@ const SongType = new GraphQLObjectType({
   name: 'Song',
   description: 'Songs',
   fields: () => ({
-    id: { type: GraphQLNonNull(GraphQLInt) },
-    title: { type : GraphQLNonNull(GraphQLString) },
-    artistId: { type: GraphQLNonNull(GraphQLInt) },
+    id: { type: new GraphQLNonNull(GraphQLInt) },
+    title: { type : new GraphQLNonNull(GraphQLString) },
+    artistId: { type: new GraphQLNonNull(GraphQLInt) },
     artist: {
       type: ArtistType,
       resolve: (parentSong) => {
@@ -105,8 +105,8 @@ const RootMutationType = new GraphQLObjectType({
       type: SongType,
       description: 'Add song',
       args: {
-        artistId: { type: GraphQLNonNull(GraphQLInt) },
-        title: { type: GraphQLNonNull(GraphQLString) }
+        artistId: { type: new GraphQLNonNull(GraphQLInt) },
+        title: { type: new GraphQLNonNull(GraphQLString) }
       },
       resolve: (parent, args) => { 
           const song = { id: dataSongs.length + 1, title: args.title }
@@ -118,8 +118,8 @@ const RootMutationType = new GraphQLObjectType({
       type: SongType,
       description: 'Update song',
       args: {
-        id: { type: GraphQLNonNull(GraphQLInt) },
-        title: { type: GraphQLNonNull(GraphQLString) }
+        id: { type: new GraphQLNonNull(GraphQLInt) },
+        title: { type: new GraphQLNonNull(GraphQLString) }
       },
       resolve: (parent, args) => {
         const song = dataSongs.find(song => song.id === args.id)
@@ -131,7 +131,7 @@ const RootMutationType = new GraphQLObjectType({
       type: SongType,
       description: 'Delete song',
       args: {
-        id: { type: GraphQLNonNull(GraphQLInt) }
+        id: { type: new GraphQLNonNull(GraphQLInt) }
       },
       resolve: (parent, args) => {
         const song = dataSongs.find(song => song.id === args.id)
@@ -143,7 +143,7 @@ const RootMutationType = new GraphQLObjectType({
       type: ArtistType,
       description: 'Add artist',
       args: {
-        name: { type: GraphQLNonNull(GraphQLString) }
+        name: { type: new GraphQLNonNull(GraphQLString) }
       },
       resolve: (parent, args) => { 
           const artist = { id: dataArtists.length + 1, name: args.name }
@@ -155,8 +155,8 @@ const RootMutationType = new GraphQLObjectType({
       type: ArtistType,
       description: 'Update artist',
       args: {
-        id: { type: GraphQLNonNull(GraphQLInt) },
-        name: { type: GraphQLNonNull(GraphQLString) }
+        id: { type: new GraphQLNonNull(GraphQLInt) },
+        name: { type: new GraphQLNonNull(GraphQLString) }
       },
       resolve: (parent, args) => {
         const artist = dataArtists.find(artist => artist.id === args.id)
@@ -168,7 +168,7 @@ const RootMutationType = new GraphQLObjectType({
       type: ArtistType,
       description: 'Delete artist',
       args: {
-        id: { type: GraphQLNonNull(GraphQLInt) }
+        id: { type: new GraphQLNonNull(GraphQLInt) }
       },
       resolve: (parent, args) => {
         const artist = dataArtists.find(artist => artist.id === args.id)
@@ -189,4 +189,4 @@ app.use('/graphql', expressGraphQL({
   graphiql: true
 }))
 
-app.listen(5000., () => console.log(`GraphQL Server Running on port 5000. Open http://localhost:5000/graphql to run queries!`))
+app.listen(5000., () => console.log(`GraphQL server running!. Open http://localhost:5000/graphql to run queries!`))
