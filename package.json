@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.mjs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "express-graphql": "^0.12.0",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "graphql-http": "^1.16.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.21"
