@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "graphql": "^16.6.0",
-    "graphql-http": "^1.16.0",
     "graphql-yoga": "^3.7.1"
   },
   "devDependencies": {
