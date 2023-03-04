@@ -1,5 +1,5 @@
 # graphql-nodejs-concept
-Understanding GraphQL sometimes hard and confusing. That's why I create this simple project (using minimal framework and using array to represent database) to learn and understand GraphQL by creating simple project.
+Understanding GraphQL sometimes hard and confusing. That's why I create this simple project (using minimal framework and using array to represent database) to learn and understand GraphQL.
 
 In this imaginary project let say we have data of `artists` and `songs`. Songs have relation to artists.
 
