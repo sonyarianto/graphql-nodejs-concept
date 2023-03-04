@@ -1,5 +1,5 @@
-import express from 'express';
-import { createHandler } from 'graphql-http/lib/use/express';
+import { createYoga } from 'graphql-yoga'
+import { createServer } from 'http'
 import { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLNonNull, GraphQLList, GraphQLInt } from 'graphql'
 
 // data section
@@ -176,12 +176,10 @@ const schema = new GraphQLSchema({
   mutation: RootMutationType,
 })
 
+// server section
 
-// create an express instance serving all methods on `/graphql`
-// where the GraphQL over HTTP express request handler is
-
-const app = express();
-app.all('/graphql', createHandler({ schema }));
-
-app.listen({ port: 5000 });
-console.log('GraphQL server running!. Open http://localhost:5000/graphql to run queries!');
+const yoga = createYoga({ schema })
+const server = createServer(yoga)
+server.listen(5000, () => {
+  console.info('GraphQL server running!. Open http://localhost:5000/graphql to run queries!')
+})
