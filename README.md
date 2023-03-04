@@ -55,7 +55,7 @@ const dataSongs = [
 
 ## Screenshot
 
-![My image](https://raw.githubusercontent.com/sonyarianto/graphql-nodejs-concept/main/graphql1.jpg?98348734)
+![My image](https://raw.githubusercontent.com/sonyarianto/graphql-nodejs-concept/main/graphql.jpg?78453843)
 
 ## How to run
 
