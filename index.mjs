@@ -180,6 +180,6 @@ const schema = new GraphQLSchema({
 
 const yoga = createYoga({ schema })
 const server = createServer(yoga)
-server.listen(443, () => {
+server.listen(5000, () => {
   console.info('GraphQL server running!. Open http://localhost:5000/graphql to run queries!')
 })
