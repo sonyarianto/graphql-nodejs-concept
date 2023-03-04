@@ -3,15 +3,14 @@ Understanding GraphQL sometimes hard and confusing. That's why I create this sim
 
 In this imaginary project let say we have data of `artists` and `songs`. Songs have relation to artists.
 
-All logic is on `index.js` file, so it should be simple.
+All logic is on `index.mjs` file, so it should be simple.
 
 After we understand about GraphQL, I think will be easy later if we want to replace the data layer with real connection to database.
 
 ## Libraries and tools used (see on `package.json`)
 
-- `express`, as web framework (minimalist) on Node.js
-- `express-graphql`, as GraphQL HTTP server middleware
 - `graphql`, as JS reference implementation for GraphQL
+- `graphql-yoga`, as GraphQL server
 - `nodemon`, just a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 
 ## Sample data
