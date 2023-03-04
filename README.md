@@ -54,6 +54,10 @@ const dataSongs = [
 - `updateArtist`, to update particular artist by id
 - `deleteArtist`, to delete particular artist by id
 
+## Screenshot
+
+![My image](https://raw.githubusercontent.com/sonyarianto/graphql-nodejs-concept/main/graphql1.jpg?9832732)
+
 ## How to run
 
 ```
