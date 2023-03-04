@@ -9,8 +9,8 @@ After we understand about GraphQL, I think will be easy later if we want to repl
 
 ## Libraries and tools used (see on `package.json`)
 
-- `graphql`, as JS reference implementation for GraphQL
-- `graphql-yoga`, as GraphQL server
+- `graphql`, as JS reference implementation for GraphQL.
+- `graphql-yoga`, as GraphQL server.
 - `nodemon`, just a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 
 ## Sample data
