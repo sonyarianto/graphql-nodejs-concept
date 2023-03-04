@@ -114,6 +114,31 @@ const RootMutationType = new GraphQLObjectType({
           return song 
         }
     },
+    updateSong: {
+      type: SongType,
+      description: 'Update song',
+      args: {
+        id: { type: GraphQLNonNull(GraphQLInt) },
+        title: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve: (parent, args) => {
+        const song = dataSongs.find(song => song.id === args.id)
+        song.title = args.title
+        return song
+      }
+    },
+    deleteSong: {
+      type: SongType,
+      description: 'Delete song',
+      args: {
+        id: { type: GraphQLNonNull(GraphQLInt) }
+      },
+      resolve: (parent, args) => {
+        const song = dataSongs.find(song => song.id === args.id)
+        dataSongs.splice(dataSongs.indexOf(song), 1)
+        return song
+      }
+    },
     addArtist: {
       type: ArtistType,
       description: 'Add artist',
@@ -126,6 +151,31 @@ const RootMutationType = new GraphQLObjectType({
           return artist
         }
     },
+    updateArtist: {
+      type: ArtistType,
+      description: 'Update artist',
+      args: {
+        id: { type: GraphQLNonNull(GraphQLInt) },
+        name: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve: (parent, args) => {
+        const artist = dataArtists.find(artist => artist.id === args.id)
+        artist.name = args.name
+        return artist
+      }
+    },
+    deleteArtist: {
+      type: ArtistType,
+      description: 'Delete artist',
+      args: {
+        id: { type: GraphQLNonNull(GraphQLInt) }
+      },
+      resolve: (parent, args) => {
+        const artist = dataArtists.find(artist => artist.id === args.id)
+        dataArtists.splice(dataArtists.indexOf(artist), 1)
+        return artist
+      }
+    }
   })
 })
 
@@ -139,4 +189,4 @@ app.use('/graphql', expressGraphQL({
   graphiql: true
 }))
 
-app.listen(5000., () => console.log(`GraphQL Server Running on port 5000.`))
+app.listen(5000., () => console.log(`GraphQL Server Running on port 5000. Open http://localhost:5000/graphql to run queries!`))
