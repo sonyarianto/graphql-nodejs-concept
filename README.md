@@ -1,7 +1,11 @@
 # graphql-nodejs-concept
-GraphQL simple use case to represent data of songs and artists. Support root and mutation query. The idea is to provide quick and simple sample about GraphQL can do. The data used in this project is not connected to any database, but we simulate using simple array. So I think it will be easy to later extended to database connection for real use case.
+Understanding GraphQL sometimes hard and confusing. That's why I create this simple project (using minimal framework and using array to represent database) to learn and understand GraphQL by creating simple project.
+
+In this imaginary project let say we have data of `artists` and `songs`. Songs have relation to artists.
 
 All logic is on `index.js` file, so it should be simple.
+
+After we understand about GraphQL, I think will be easy later if we want to replace the data layer with real connection to database.
 
 ## Libraries used (see on `package.json`)
 
