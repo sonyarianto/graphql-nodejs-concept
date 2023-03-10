@@ -59,6 +59,14 @@ const dataSongs = [
 
 ## How to run
 
+1. Install NPM
+
+```
+npm install
+
+```
+2. Run this command:
+
 ```
 npm run dev
 ```
