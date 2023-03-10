@@ -27,7 +27,7 @@ const dataSongs = [
 
 const ArtistType = new GraphQLObjectType({
   name: 'Artist',
-  description: 'Artists',
+  description: 'Artist',
   fields: () => ({
     id: { type: new GraphQLNonNull(GraphQLInt) },
     name: { type: new GraphQLNonNull(GraphQLString) },
@@ -42,7 +42,7 @@ const ArtistType = new GraphQLObjectType({
 
 const SongType = new GraphQLObjectType({
   name: 'Song',
-  description: 'Songs',
+  description: 'Song',
   fields: () => ({
     id: { type: new GraphQLNonNull(GraphQLInt) },
     title: { type : new GraphQLNonNull(GraphQLString) },
