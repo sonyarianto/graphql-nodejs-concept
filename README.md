@@ -59,9 +59,10 @@ const dataSongs = [
 
 ## How to run
 
-```
-npm run dev
-```
+- Clone the repository
+- Go to the project folder
+- Run `npm install`
+- Run `npm run dev`
 
 Open your browser at http://localhost:5000
 
