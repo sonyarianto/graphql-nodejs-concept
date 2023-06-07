@@ -10,9 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "graphql": "^16.6.0",
-    "graphql-yoga": "^3.7.1"
+    "graphql-yoga": "^4.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.22"
   }
 }
