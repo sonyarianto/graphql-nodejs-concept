@@ -64,7 +64,24 @@ const dataSongs = [
 - Run `npm install`
 - Run `npm run dev`
 
-Open your browser at http://localhost:5000
+A web server will run on `localhost:5000`.
+
+You can go to `http://localhost:5000/graphql` it will show the GraphiQL Yoga screen. You can try query there, let type the sample below.
+
+```
+query {
+  artists {
+    id
+    name
+    songs {
+      id
+      title
+    }
+  }
+}
+```
+
+It will get list of all `artists` data.
 
 ## License
 
