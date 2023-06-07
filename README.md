@@ -1,5 +1,5 @@
 # graphql-nodejs-concept
-Understanding GraphQL sometimes hard and confusing. That's why I create this simple project (using minimal framework and using array to represent database) to learn and understand GraphQL.
+Understanding GraphQL sometimes hard and confusing. That's why I create this simple project (using minimal framework and using array to represent a database). The goal is simple, to get idea about what is GraphQL and what GraphQL can do.
 
 In this imaginary project let say we have data of `artists` and `songs`. Songs have relation to artists.
 
@@ -15,7 +15,7 @@ After we understand about GraphQL, I think will be easy later if we want to repl
 
 ## Sample data
 
-```
+```js
 const dataArtists = [
   { id: 1, name: "Peter Cetera" },
   { id: 2, name: "Dewa 19" },
@@ -55,15 +55,33 @@ const dataSongs = [
 
 ## Screenshot
 
-![My image](https://raw.githubusercontent.com/sonyarianto/graphql-nodejs-concept/main/graphql1.jpg?98348734)
+![My image](https://raw.githubusercontent.com/sonyarianto/graphql-nodejs-concept/main/graphql.jpg?78453843)
 
 ## How to run
 
-```
-npm run dev
+- Clone the repository
+- Go to the project folder
+- Run `npm install`
+- Run `npm run dev`
+
+A web server will run on `localhost:5000`.
+
+You can go to `http://localhost:5000/graphql` it will show the GraphiQL Yoga screen. You can try query there, let type the sample below.
+
+```graphql
+query {
+  artists {
+    id
+    name
+    songs {
+      id
+      title
+    }
+  }
+}
 ```
 
-Open your browser at http://localhost:5000
+It will get list of all `artists` data.
 
 ## License
 
