@@ -57,7 +57,7 @@ const dataSongs = [
 
 ![My image](https://raw.githubusercontent.com/sonyarianto/graphql-nodejs-concept/main/graphql.jpg?78453843)
 
-## How to run
+## How to run?
 
 - Clone the repository
 - Go to the project folder
@@ -87,4 +87,4 @@ It will get list of all `artists` data.
 
 MIT
 
-Maintained by Sony Arianto Kurniawan <<sony@sony-ak.com>>
+Maintained by Sony Arianto Kurniawan <<sony@sony-ak.com>> and contributors.
