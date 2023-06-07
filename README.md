@@ -15,7 +15,7 @@ After we understand about GraphQL, I think will be easy later if we want to repl
 
 ## Sample data
 
-```
+```js
 const dataArtists = [
   { id: 1, name: "Peter Cetera" },
   { id: 2, name: "Dewa 19" },
@@ -68,7 +68,7 @@ A web server will run on `localhost:5000`.
 
 You can go to `http://localhost:5000/graphql` it will show the GraphiQL Yoga screen. You can try query there, let type the sample below.
 
-```
+```graphql
 query {
   artists {
     id
